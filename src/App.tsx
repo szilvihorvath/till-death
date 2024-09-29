@@ -3,6 +3,7 @@ import { Header } from "./components/header/Header"
 import { Navbar } from "./components/navbar/navbar"
 import { When, Where, Faq, Intro } from "./components/sections/index"
 import './App.css'
+import { RsvpComponent } from "./components/rsvp/Rsvp"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <When />
         <hr style={{width: '50%', marginTop: '30px', marginBottom: '30px'}}/>
         <Faq />
+        <RsvpComponent />
       </Container>
   )
 }
