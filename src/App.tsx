@@ -1,24 +1,21 @@
 import { Container } from "./components/container/Container"
-import { Header } from "./components/header/Header"
-import { Navbar } from "./components/navbar/navbar"
-import { When, Where, Faq, Intro } from "./components/sections/index"
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import './App.css'
-import { RsvpComponent } from "./components/rsvp/Rsvp"
+import Home from "./pages/Home"
+import Rsvp from "./pages/Rsvp";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Container />}>
+      <Route index element={<Home />} />
+      <Route path="/rsvp" element={<Rsvp />} />
+    </Route>
+  )
+)
 
 function App() {
   return (
-      <Container>
-        <Header />
-        <Navbar />
-        <Intro />
-        <hr style={{width: '50%', marginTop: '30px', marginBottom: '30px'}}/>
-        <Where />
-        <hr style={{width: '50%', marginTop: '30px', marginBottom: '30px'}}/>
-        <When />
-        <hr style={{width: '50%', marginTop: '30px', marginBottom: '30px'}}/>
-        <Faq />
-        <RsvpComponent />
-      </Container>
+    <RouterProvider router={router} />
   )
 }
 
