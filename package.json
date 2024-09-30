@@ -2,6 +2,7 @@
   "name": "till-death",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://szilviandliam.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,12 +11,15 @@
     "preview": "vite preview",
     "add-domain": "echo \"szilviandliam.com\" > dist/CNAME",
     "predeploy": "npm run build && npm run add-domain",
-    "deploy": "gh-pages -d dist" 
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
