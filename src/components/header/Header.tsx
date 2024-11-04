@@ -1,5 +1,4 @@
 // import { CountdownComp } from "../countdown/Countdown";
-import "./styles.css";
 
 const Header = () => {
     return (

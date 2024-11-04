@@ -1,17 +1,27 @@
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import SzilviAndLiamLogo from "/assets/szilviandliam.svg";
 import "./styles.css";
 
 
 const Navbar = () => {
+    const location = useLocation();
+    const { pathname } = location;
+    
+    const isRsvpPage = pathname === "/rsvp";
+
     return (
-        <div className="navbar">
-            <img className="logo" src={SzilviAndLiamLogo} alt="Szilvi and Liam Logo" />
-            <HashLink className="link" smooth to="#where">WHERE</HashLink>
-            <HashLink className="link" smooth to="#when">WHEN</HashLink>
-            <HashLink className="link" smooth to="#faq">FAQ</HashLink>
-            <Link className="link" to={"/rsvp"}>RSVP</Link>
+        <div className={`${isRsvpPage ? "navbar-rsvp" : "navbar"}`}>
+            <Link to={"/"}><img className="logo" src={SzilviAndLiamLogo} alt="Szilvi and Liam Logo" /></Link>
+            {isRsvpPage && (<Link className="link" to={"/"}>HOME</Link>)}
+            {!isRsvpPage && (
+                <>
+                    <HashLink className="link" smooth to="#where">WHERE</HashLink>
+                    <HashLink className="link" smooth to="#when">WHEN</HashLink>
+                    <HashLink className="link" smooth to="#faq">FAQ</HashLink>
+                    <Link className="link" to={"/rsvp"}>RSVP</Link>
+                </>
+            )}
         </div>
         
     )    

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "./styles.css"
-import { Navbar } from "../navbar/navbar";
+import { Navbar } from "../navbar/Navbar";
 import { Header } from "../header/Header";
 
 const Container = () => {

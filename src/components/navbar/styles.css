@@ -6,6 +6,14 @@
     padding-bottom: 2rem;
 }
 
+.navbar-rsvp {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 30% 1fr;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
 .logo {
     width: 7rem;
     height: 7rem;
