@@ -2,16 +2,12 @@ import "./styles.css"
 
 const Intro = () => {
     return (
-        <div className="intro-container">
-            <h2>Welcome to Our Wedding Website!</h2>
-            <h3>Szilvi & Liam</h3>
-            <p>We are so thrilled to share this special moment in our lives with you! As we embark on this journey together, we want to invite our dearest friends and family to celebrate with us. Our wedding website is here to provide you with all the details you need to be a part of our big day.</p>
+        <div className="intro">
+            <h2>We're getting married!</h2>
 
-            <p>You’ll find everything you need to know right here. We’ve also included some information about accommodations in the area, and traveling to the reception.</p>
+            <p>We're making it official and we're super excited to celebrate our love and our journey together with you, our dearest friends and family. You're invited to our wedding reception, or our TILL DEATH DO US PARTY, if you will!</p>
 
-            <p>We are beyond excited to have you join us as we start this new chapter. Your presence means the world to us, and we can’t wait to create unforgettable memories together.</p>
-
-            <p>With love, Szilvi & Liam</p>
+            <p>You’ll find everything you need to know right here - should you have any questions though, just reach out to us! For our friends and family who come from further afield, we’ve included some information about accommodations, some things to do in the area, and traveling to the reception.</p>
         </div>
     )
 }

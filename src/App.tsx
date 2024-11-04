@@ -1,21 +1,19 @@
 import { Container } from "./components/container/Container"
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import { HashRouter, Route, Routes } from "react-router-dom";
 import './App.css'
 import Home from "./pages/Home"
 import Rsvp from "./pages/Rsvp";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Container />}>
-      <Route index element={<Home />} />
-      <Route path="/rsvp" element={<Rsvp />} />
-    </Route>
-  )
-)
-
 function App() {
   return (
-    <RouterProvider router={router} />
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Container />}>
+          <Route path="/" element={<Home />} />
+          <Route path="rsvp" element={<Rsvp />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   )
 }
 

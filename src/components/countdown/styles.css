@@ -1,8 +1,7 @@
 .countdown {
+    font-size: 1.25rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    color: black;
+    margin-bottom: 2rem;
 }

@@ -2,7 +2,7 @@ import "./styles.css"
 
 const Faq = () => {
     return (
-        <div className="faq-container" id='FAQ'>
+        <div className="faq" id='faq'>
             <h2>FAQ</h2>
             <h3 className="question">
                 <u>General Information</u>

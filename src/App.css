@@ -1,14 +1,31 @@
+@font-face {
+  font-family: 'Centaur';
+  src: url('/fonts/centaur.woff') format('woff'),
+       url('/fonts/centaur.ttf')  format('truetype')
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+#root {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Centaur', 'Courier New', monospace;
 }
 
 body {
   margin: 0 0;
   padding: 0 0;
+  background-color: hsl(33.75,80%,96.08%);
+  /* pale-yellow: #FDF6ED */
+  color: #b65145;
+  /* golden: #D69A43 */
+  letter-spacing: .1rem;
 }
 
-#root {
-  display: flex;
-  justify-content: center;
-  font-family: 'Courier New', Courier, monospace;
+h1 {
+  font-size: 3rem;
+  letter-spacing: .5rem;
 }

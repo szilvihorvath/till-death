@@ -8,7 +8,7 @@ type Props = {
 }
 
 const renderer = ({ days, hours }: Props) => {
-    return <span>{days} Days, {hours} Hours until the day!</span>;
+    return <span>{days} Days, {hours} Hours until we're getting married!</span>;
 };
 
 const CountdownComp = () => {

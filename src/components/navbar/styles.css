@@ -1,0 +1,21 @@
+.navbar {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 30% repeat(4, 1fr);
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.logo {
+    width: 7rem;
+    height: 7rem;
+    filter: invert(40%) sepia(26%) saturate(1448%) hue-rotate(318deg) brightness(90%) contrast(82%);
+}
+
+.link {
+    justify-self: end;
+    color: #b65145;
+    text-decoration: none;
+    font-size: 1.7rem;
+    letter-spacing: .1rem;
+}
