@@ -1,6 +1,6 @@
 import { HashLink } from 'react-router-hash-link';
 import { Link, useLocation } from 'react-router-dom';
-import SzilviAndLiamLogo from "/assets/szilviandliam.svg";
+import SzilviAndLiamLogo from "/assets/szilviandliamribbon.png";
 import "./styles.css";
 
 
@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <div className={`${isRsvpPage ? "navbar-rsvp" : "navbar"}`}>
             <Link to={"/"}><img className="logo" src={SzilviAndLiamLogo} alt="Szilvi and Liam Logo" /></Link>
-            {isRsvpPage && (<Link className="link" to={"/"}>HOME</Link>)}
+            {isRsvpPage && (<Link className="link link__home" to={"/"}>BACK</Link>)}
             {!isRsvpPage && (
                 <>
                     <HashLink className="link" smooth to="#where">WHERE</HashLink>

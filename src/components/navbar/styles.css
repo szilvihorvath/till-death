@@ -1,8 +1,10 @@
 .navbar {
     display: grid;
     width: 100%;
-    grid-template-columns: 30% repeat(4, 1fr);
-    align-items: center;
+    grid-template-columns: repeat(4, minmax(5rem, auto));
+    justify-items: center;
+    justify-content: space-between;
+    row-gap: 3rem;
     padding-bottom: 2rem;
 }
 
@@ -14,16 +16,23 @@
     padding-bottom: 2rem;
 }
 
+a:has(.logo) {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
 .logo {
-    width: 7rem;
-    height: 7rem;
-    filter: invert(40%) sepia(26%) saturate(1448%) hue-rotate(318deg) brightness(90%) contrast(82%);
+    width: 60vw;
 }
 
 .link {
-    justify-self: end;
-    color: #b65145;
+    color: #D69A43;
     text-decoration: none;
     font-size: 1.7rem;
     letter-spacing: .1rem;
+}
+
+.link.link__home {
+    grid-column: 1 / -1;
+    justify-self: end;
 }

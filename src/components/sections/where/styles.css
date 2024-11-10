@@ -6,4 +6,10 @@
 
 .location__map {
   justify-self: end;
+  --mask: 
+    linear-gradient(#000 0 0) 50%/calc(100% - 37px) calc(100% - 37px) no-repeat,
+    radial-gradient(farthest-side,#000 98%,#0000) 0 0/40px 40px round;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  border: 20px solid #D69A43;
 }

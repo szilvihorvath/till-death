@@ -4,8 +4,8 @@ const Home = () => {
   return (
     <>
       <Intro />
-      <Where />
       <When />
+      <Where />
       <Faq />
     </>
   )

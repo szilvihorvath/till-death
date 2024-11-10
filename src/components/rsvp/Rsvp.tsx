@@ -1,5 +1,8 @@
-import { useCallback } from "react";
-import { Button, Form, Input, Radio, Space, notification } from "antd";
+import { useCallback, useState } from "react";
+import { Button, ConfigProvider, Form, Input, Radio, Space, notification } from "antd";
+import { useWindowSize } from "@uidotdev/usehooks";
+import Confetti from 'react-confetti';
+import "./styles.css";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfuOmvKE-he7fc-oB505ttSbb0qjKl7xa4erAvnqWoQMmDyUg/formResponse";
 
@@ -11,10 +14,18 @@ type FormData = {
   song: string;
 };
 
+//TODO: 
+// error handling
+// add new page for yes and no
+// move confetti to yes page 
+
 const RsvpComponent = () => {
     const [form] = Form.useForm();
     const [api, contextHolder] = notification.useNotification();
-  
+    const [isExploding, setIsExploding] = useState(false);
+    const { width, height } = useWindowSize();
+    console.log('width ', width)
+
     const onFinish = useCallback(
       async ({ email, attendance, names, dietaryRequirements, song } : FormData) => {
         try {
@@ -33,12 +44,15 @@ const RsvpComponent = () => {
           );
           form.resetFields();
           // TODO: add a message instead this notification?
-          api.success({
-            message: "Submitted successfully",
-          });
+          // api.success({
+          //   message: "Submitted successfully",
+          // });
+          setIsExploding(true);
         } catch (error: unknown) {
+          console.log('there was an error')
           // TODO: add message when there's an error to try again or let us know
           if (error instanceof Error) {
+            console.log('there was an error')
             return api.error({
               message: error.message,
             });
@@ -52,7 +66,20 @@ const RsvpComponent = () => {
 
     return (
         <div className="rsvp">
-          <h1>Hello RSVP</h1>
+          <h1>RSVP</h1>
+          <ConfigProvider
+            theme={{
+              token: {
+                // Seed Token
+                colorPrimary: '#D69A43',
+                colorTextBase: '#D69A43',
+                borderRadius: 10,
+
+                // Alias Token
+                colorBgContainer: '#2E2E30',
+              }
+            }}
+          >
           {contextHolder}
           <Form
             form={form}
@@ -108,6 +135,11 @@ const RsvpComponent = () => {
             Submit
           </Button>
           </Form>
+          </ConfigProvider>
+          {isExploding && <Confetti
+          style={{ zIndex: 9999 }}
+          width={width || 0}
+          height={height * 3 || 0} />}
         </div>
     )    
 }
