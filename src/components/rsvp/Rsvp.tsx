@@ -139,7 +139,7 @@ const RsvpComponent = () => {
           {isExploding && <Confetti
           style={{ zIndex: 9999 }}
           width={width || 0}
-          height={height * 3 || 0} />}
+          height={height && height * 3 || 0} />}
         </div>
     )    
 }
