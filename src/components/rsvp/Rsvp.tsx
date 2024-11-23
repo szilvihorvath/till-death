@@ -1,7 +1,6 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { Button, ConfigProvider, Form, Input, Radio, Space, notification } from "antd";
-import { useWindowSize } from "@uidotdev/usehooks";
-import Confetti from 'react-confetti';
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfuOmvKE-he7fc-oB505ttSbb0qjKl7xa4erAvnqWoQMmDyUg/formResponse";
@@ -14,17 +13,12 @@ type FormData = {
   song: string;
 };
 
-//TODO: 
-// error handling
-// add new page for yes and no
-// move confetti to yes page 
-
 const RsvpComponent = () => {
     const [form] = Form.useForm();
     const [api, contextHolder] = notification.useNotification();
-    const [isExploding, setIsExploding] = useState(false);
-    const { width, height } = useWindowSize();
-    console.log('width ', width)
+    const navigate = useNavigate();
+
+    const isAttending = (value : string) => value === "Yes,  I'll be there"; 
 
     const onFinish = useCallback(
       async ({ email, attendance, names, dietaryRequirements, song } : FormData) => {
@@ -43,14 +37,12 @@ const RsvpComponent = () => {
             }
           );
           form.resetFields();
-          // TODO: add a message instead this notification?
-          // api.success({
-          //   message: "Submitted successfully",
-          // });
-          setIsExploding(true);
+
+          setTimeout(() => {
+            isAttending(attendance) ? navigate('/thanks?attendance=yes') : navigate('/thanks?attendance=no')}
+            , 2000);
         } catch (error: unknown) {
           console.log('there was an error')
-          // TODO: add message when there's an error to try again or let us know
           if (error instanceof Error) {
             console.log('there was an error')
             return api.error({
@@ -60,7 +52,7 @@ const RsvpComponent = () => {
           return String(error)
         } 
       },
-      [api, form]
+      [api, form, navigate]
     );
 
 
@@ -90,7 +82,7 @@ const RsvpComponent = () => {
           <Form.Item
             name="email"
             label="Email"
-            rules={[{ required: true, message: "Please fill in the email address" }]}
+            rules={[{ required: true, message: "Please fill in the email address" }, {type: "email", message: "Please provide a valid email address"}]}
           >
             <Input />
           </Form.Item> 
@@ -109,7 +101,6 @@ const RsvpComponent = () => {
           <Form.Item
             name="names"
             label="What are the names of people attending?"
-            rules={[{ required: true, message: "Please fill in the name or names of people attending" }]}
           >
             <Input />
           </Form.Item> 
@@ -136,10 +127,6 @@ const RsvpComponent = () => {
           </Button>
           </Form>
           </ConfigProvider>
-          {isExploding && <Confetti
-          style={{ zIndex: 9999 }}
-          width={width || 0}
-          height={height && height * 3 || 0} />}
         </div>
     )    
 }

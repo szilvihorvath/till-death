@@ -7,13 +7,12 @@ import "./styles.css";
 const Navbar = () => {
     const location = useLocation();
     const { pathname } = location;
-    
-    const isRsvpPage = pathname === "/rsvp";
+    const isRsvpPage = pathname === "/rsvp" || pathname === "/thanks";
 
     return (
         <div className={`${isRsvpPage ? "navbar-rsvp" : "navbar"}`}>
             <Link to={"/"}><img className="logo" src={SzilviAndLiamLogo} alt="Szilvi and Liam Logo" /></Link>
-            {isRsvpPage && (<Link className="link link__home" to={"/"}>BACK</Link>)}
+            {isRsvpPage && (<Link className="link link__home" to={"/"}>HOME</Link>)}
             {!isRsvpPage && (
                 <>
                     <HashLink className="link" smooth to="#where">WHERE</HashLink>

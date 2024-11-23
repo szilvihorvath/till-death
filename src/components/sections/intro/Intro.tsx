@@ -1,9 +1,10 @@
+import { CountdownComp } from "../../countdown/Countdown"
 import "./styles.css"
 
 const Intro = () => {
     return (
         <div className="intro">
-            <h2>We're getting married!</h2>
+            <CountdownComp />
 
             <p>We're making it official and we're super excited to celebrate our love and the next chapter of our journey together with you, our dearest friends and family. You're invited to our wedding reception, or our TILL DEATH DO US PARTY, if you will!</p>
 

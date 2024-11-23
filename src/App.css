@@ -19,17 +19,22 @@ body {
   margin: 0 0;
   padding: 0 0;
   background-color: #2E2E30;
-  /* background-color: hsl(33.75,80%,96.08%); */
-  /* pale-yellow: #FDF6ED */
-  /* charcoal: #2E2E30 */
   color: #D69A43;
-  /* color: #b65145; */
-  /* golden: #D69A43 */
-  /* paler-gold: #BDA883 */
   letter-spacing: .1rem;
 }
 
 h1 {
   font-size: 3rem;
   letter-spacing: .5rem;
+}
+
+.header {
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+  }
 }

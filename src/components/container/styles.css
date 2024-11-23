@@ -6,4 +6,5 @@
     width: 80vw;
     padding-top: 3rem;
     margin-bottom: 3em;
+    overflow-x: hidden;
 }

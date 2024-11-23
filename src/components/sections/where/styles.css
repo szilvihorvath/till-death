@@ -13,3 +13,10 @@
           mask: var(--mask);
   border: 20px solid #D69A43;
 }
+
+@media (max-width: 600px) {
+  .location {
+    display: flex;
+    flex-direction: column;
+  }
+}    

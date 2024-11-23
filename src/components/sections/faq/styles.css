@@ -1,4 +1,40 @@
+ul {
+  margin-left: -1.5rem;
+}
+
+li {
+  list-style-type: none;
+  padding-bottom: .5rem;
+}
 
 .faq {
+  display: flex;
+  flex-direction: column;
   width: 70vw;
+  margin-top: 2rem;
+}
+
+.hands {
+  align-self: center;
+}
+
+.faq__link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+details {
+  padding-bottom: 1rem;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details summary > * {
+  display: inline;
+}
+
+details summary h3 {
+  margin-left: .3rem;
 }

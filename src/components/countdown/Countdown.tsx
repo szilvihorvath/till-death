@@ -4,11 +4,10 @@ import Countdown from 'react-countdown';
 
 type Props = {
     days: ReactNode
-    hours: ReactNode
 }
 
-const renderer = ({ days, hours }: Props) => {
-    return <span>{days} Days, {hours} Hours until we're getting married!</span>;
+const renderer = ({ days }: Props) => {
+    return <h2>{days} days until we're getting married!</h2>;
 };
 
 const CountdownComp = () => {

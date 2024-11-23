@@ -3,3 +3,9 @@
   width: 70vw;
   padding-bottom: 3rem;
 }
+
+@media (max-width: 600px) {
+  .intro {
+    padding-bottom: 1.7rem;
+  }
+}

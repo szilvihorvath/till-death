@@ -1,0 +1,9 @@
+.rsvp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rsvp h1 {
+  align-self: center;
+}
