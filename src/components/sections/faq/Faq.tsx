@@ -16,7 +16,7 @@ const Faq = () => {
 
             <details>
                 <summary><h3 className="question">Can I bring my kid(s)?</h3></summary>
-                <p>Due to limited capacity, with the expection of close family, this will be an adults only event.</p>
+                <p>Due to limited capacity, with the exception of close family, this will be an adults only event.</p>
             </details>
 
             <details>
