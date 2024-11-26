@@ -72,7 +72,7 @@ const Faq = () => {
                 <summary>
                 <h3 className="question">Will there be an open bar?</h3>
                 </summary>
-                <p>There will be a limited amount of beer, wine and soft drinks provided, and once we ran out of those you'll be able to buy drinks at the bar.</p>
+                <p>There will be a limited amount of beer, wine and soft drinks provided, and once we run out of those you'll be able to buy drinks at the bar.</p>
             </details>
 
             <details>

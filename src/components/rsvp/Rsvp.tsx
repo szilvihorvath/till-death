@@ -28,7 +28,7 @@ const RsvpComponent = () => {
               method: 'post',
               body: new URLSearchParams({
                                 "entry.877086558": attendance,
-                                "entry.1498135098": names,
+                                "entry.1498135098": names ?? "n/a",
                                 "entry.1260370108": dietaryRequirements ?? "",
                                 "entry.2606285": song ?? "",
                                 emailAddress: email,
